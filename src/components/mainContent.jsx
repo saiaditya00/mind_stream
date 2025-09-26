@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import backgroundScreen from '../assets/backgroundScreen.jpg';
 import p1 from '../assets/p1.png';
@@ -12,11 +11,7 @@ import p8 from '../assets/p8.png';
 import p9 from '../assets/p9.png';
 import p10 from '../assets/p10.png';
 
-
-
-
 function MainContent() {
-
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [loopCount, setLoopCount] = useState(0);
     const images = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10];
@@ -31,21 +26,21 @@ function MainContent() {
                     }
                     return nextIndex;
                 });
-            }, 1000); // Change image every 1 second
+            }, 1000);
 
             return () => clearInterval(interval);
         }
-    }, [currentImageIndex, loopCount, images.length]);
+    }, [loopCount]); // Remove currentImageIndex from dependencies
 
     return (
         <>
-            <div className="p-6 relative">
+            <div className="p-4 relative ">
                 <img src={backgroundScreen} alt="Main Content" className="w-full h-auto rounded-lg shadow-md" />
                 {loopCount < 5 && (
                     <img
                         src={images[currentImageIndex]}
                         alt="pavan"
-                        className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-22 h-auto'
+                        className='absolute top-80 left-90 transform -translate-x-1/2 -translate-y-1/2 w-28 h-40 object-contain'
                     />
                 )}
             </div>

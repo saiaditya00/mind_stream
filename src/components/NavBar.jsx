@@ -1,11 +1,8 @@
-
-
-
 import React from 'react';
 
 function NavBar() {
     return (
-        <nav className="navbar w-screen flex items-center justify-between p-4 bg-blue-600 text-white">
+        <nav className="w-full flex items-center justify-between p-4 bg-gray-600 text-white">
             <div className="navbar-brand">
                 <h1 className="text-xl font-bold">Mind Stream</h1>
             </div>
@@ -25,6 +22,5 @@ function NavBar() {
         </nav>
     )
 }
-
 
 export default NavBar;
